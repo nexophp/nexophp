@@ -1,11 +1,14 @@
-<?php 
+<?php
 
-define('WWW_PATH', __DIR__);
-define('PATH', realpath(__DIR__.'/../'));
-
-include PATH.'/vendor/autoload.php';
-
-IRoute::get('/',function(){
-	echo 1;
-});   
-
+/**
+ * 上线后改为false
+ */
+define('DEBUG', true);
+/**
+ * 加载配置
+ */
+include __DIR__ . '/../config.ini.php';
+/**
+ * 启动项目
+ */
+include __DIR__ . '/../vendor/nexophp/boot/boot.php';
