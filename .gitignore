@@ -4,3 +4,7 @@
 /config.ini.php
 /nginx.htaccess
 /.htaccess
+/public/404.html
+/public/index.html
+/public/.htaccess
+/public/nginx

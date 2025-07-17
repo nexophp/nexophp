@@ -18,4 +18,9 @@ location / {
 }
 ~~~
  
+# dev
+
+~~~
+composer update nexophp/* --ignore-platform-reqs -vvv
+~~~
 

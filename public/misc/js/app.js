@@ -3,7 +3,7 @@ function ajax(url, data, call) {
         url: url,
         type: "POST",
         dataType: "json",
-        contentType: "application/json",
+        contentType: "application/x-www-form-urlencoded",
         data: data,
         success: function (res) {
             call(res);
