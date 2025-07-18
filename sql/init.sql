@@ -27,19 +27,8 @@ CREATE TABLE `user` (
   `created_at` int(11) NOT NULL,
   `updated_at` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
-
-CREATE TABLE `menu` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL COMMENT '唯一值',
-  `icon` varchar(255) DEFAULT NULL COMMENT '图标',
-  `pid` int(11) DEFAULT 0 COMMENT '父id',
-  `title` varchar(255) NOT NULL COMMENT '菜单名',
-  `url` varchar(255) DEFAULT NULL COMMENT '路由',
-  `level` int(11) DEFAULT NULL COMMENT '级别', 
-  `sort` int(11) DEFAULT NULL COMMENT '排序', 
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4; 
+ 
 
 CREATE TABLE `role` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -59,6 +48,18 @@ CREATE TABLE `user_role` (
   KEY `user_id` (`user_id`),
   KEY `role_id` (`role_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COMMENT='用户角色关联表';
+
+CREATE TABLE `language` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL COMMENT '语言名称',
+  `code` varchar(50) NOT NULL COMMENT '语言代码',
+  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '状态：1启用，0禁用',
+  `sort` int(11) NOT NULL DEFAULT '0' COMMENT '排序',
+  `created_at` int(11) NOT NULL,
+  `updated_at` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `code` (`code`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COMMENT='语言表';
 
 
 

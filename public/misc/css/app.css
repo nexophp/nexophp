@@ -219,3 +219,28 @@ body {
 .selected-row {
     background-color: #e6f7ff !important;
 }
+
+a.link{
+    color: #007bff;
+}
+
+.editable-cell {
+    padding: 6px;
+    min-height: 38px;
+    cursor: pointer;
+}
+.editable-cell:hover {
+    background-color: #f8f9fa;
+}
+.editable-cell small {
+    opacity: 0.3;
+}
+.editable-cell:hover small {
+    opacity: 1;
+}
+
+label.required::after{
+    content: '*';
+    color: #f56c6c;
+    margin-left: 4px;
+}
