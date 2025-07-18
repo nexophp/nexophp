@@ -16,7 +16,6 @@
     "require": { 
         "nexophp/boot": "dev-main",
         "nexophp/admin": "dev-main",
-        "nexophp/language": "dev-main",
-        "nexophp/demo_module": "dev-main"
+        "nexophp/language": "dev-main"
     }
 }
