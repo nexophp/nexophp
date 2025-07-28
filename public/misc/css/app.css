@@ -6,8 +6,9 @@
 body {
     background: #f4f4f9;
 }
-#app{ 
-    padding:20px;
+
+#app {
+    padding: 20px;
 }
 
 /* 表格样式，适配Bootstrap 5风格 */
@@ -31,7 +32,7 @@ body {
 
 /* 表格单元格 */
 .el-table td {
-    padding: 0.75rem; 
+    padding: 0.75rem;
     vertical-align: middle;
 }
 
@@ -50,7 +51,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem 0;  
+    padding: 1rem 0;
+    margin-bottom: 0;
+    padding-bottom: 0
 }
 
 /* 总条数显示样式 */
@@ -137,12 +140,14 @@ body {
 .el-pager .number.active {
     color: #fff;
     background-color: #0d6efd;
-    border: 1px solid #0d6efd; /* 修复激活状态边框，与Bootstrap 5按钮一致 */
+    border: 1px solid #0d6efd;
+    /* 修复激活状态边框，与Bootstrap 5按钮一致 */
     cursor: default;
 }
 
 /* 响应式调整，适配小屏幕 */
 @media (max-width: 576px) {
+
     .el-table th,
     .el-table td {
         padding: 0.5rem;
@@ -220,8 +225,9 @@ body {
     background-color: #e6f7ff !important;
 }
 
-a.link{
+.link {
     color: #007bff;
+    cursor: pointer;
 }
 
 .editable-cell {
@@ -229,18 +235,236 @@ a.link{
     min-height: 38px;
     cursor: pointer;
 }
+
 .editable-cell:hover {
     background-color: #f8f9fa;
 }
+
 .editable-cell small {
     opacity: 0.3;
 }
+
 .editable-cell:hover small {
     opacity: 1;
 }
 
-label.required::after{
+label.required::after {
     content: '*';
     color: #f56c6c;
     margin-left: 4px;
+}
+
+.form-control:hover,
+.form-control:focus {
+    border-color: inherit;
+    box-shadow: none;
+    outline: none;
+}
+
+.error {
+    color: #f56c6c;
+}
+
+.success {
+    color: #409eff;
+}
+
+.warning {
+    color: #e6a23c;
+}
+
+.el-pagination .el-pager li.active+li {
+    border-left: 1px solid #dcdfe6 !important;
+}
+
+.el-drawer__header {
+    margin-bottom: 0px;
+    padding: 10px 20px 12px 10px;
+}
+ 
+/* 删除按钮样式 */
+.remove_link.hand {
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2px 0;
+    transition: background 0.2s ease;
+}
+
+.remove_link.hand:hover {
+    background: rgba(255, 0, 0, 0.7);
+}
+
+.element-upload{
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    border: 1px solid #999;
+    background: #fff;
+    text-align: center;
+}
+
+
+.media-card {
+  width: 280px;
+}
+
+.media-preview {
+  width: 160px;
+  height: 160px;
+  border: 1px solid #eee;
+  cursor: pointer;
+}
+
+.text-ellipsis {
+  display: inline-block;
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+.active_media{
+    border:1px solid red !important;
+}
+.btn-close svg{
+    display: none !important;
+}
+.upload-hide .el-upload-list{
+    display: none;
+}
+.file-manager-container {
+    border: 1px solid #ebeef5;
+    border-radius: 4px;
+    padding: 15px;
+    background: #fff;
+}
+.file-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.file-icon img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.file-name {
+    display: inline-block;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.context-menu {
+    position: fixed;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    min-width: 120px;
+}
+
+.context-menu-item {
+    padding: 8px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.context-menu-item:hover {
+    background-color: #f5f7fa;
+}
+
+.context-menu-item i {
+    margin-right: 8px;
+    color: #f56c6c;
+}
+
+.hand{
+    cursor: pointer;
+}
+
+.drag { 
+    cursor: move;
+}
+
+.editor—wrapper{
+   border: 1px solid rgb(204, 204, 204);
+}
+/* 简约风格 el-tree */
+.custom-tree {
+    background: transparent;
+    border: none; 
+}
+
+/* 节点基础样式 */
+.custom-tree .el-tree-node {
+    margin-bottom: 2px;
+}
+
+/* 节点内容区域 */
+.custom-tree .el-tree-node__content {
+    height: 36px;
+    padding: 0 8px;
+    border-radius: 4px;
+    background: transparent;
+    transition: background 0.15s ease;
+}
+
+/* 悬停效果 */
+.custom-tree .el-tree-node__content:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+/* 当前选中节点 */
+.custom-tree .el-tree-node.is-current > .el-tree-node__content {
+    background: #f0f7ff;
+    color: #1890ff;
+}
+
+/* 展开图标 */
+.custom-tree .el-tree-node__expand-icon {
+    color: #999;
+    font-size: 12px;
+}
+
+.custom-tree .el-tree-node__expand-icon:hover {
+    color: #1890ff;
+}
+
+/* 节点文字 */
+.custom-tree .el-tree-node__label {
+    font-size: 13px;
+    color: #333;
+    font-weight: normal;
+}
+
+/* 当前选中节点的文字 */
+.custom-tree .el-tree-node.is-current .el-tree-node__label {
+    color: #1890ff;
+}
+
+/* 子节点缩进 */
+.custom-tree .el-tree-node__children {
+    padding-left: 16px;
+    border-left: 1px dashed #eaeaea;
+    margin-left: 8px;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .custom-tree .el-tree-node__content {
+        height: 32px;
+        padding: 0 6px;
+    }
 }

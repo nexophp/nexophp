@@ -15,7 +15,23 @@
     ],
     "require": { 
         "nexophp/boot": "dev-main",
-        "nexophp/admin": "dev-main",
-        "nexophp/language": "dev-main"
+        "tencentcloud/tencentcloud-sdk-php": "dev-master",
+        "aws/aws-sdk-php": "^3.351",
+        "alibabacloud/dysmsapi-20170525": "^3.1",
+        "league/omnipay": "^3.2@dev",
+        "omnipay/paypal": "^3.0@dev",
+        "stripe/stripe-php": "^17.5@beta",
+        "w7corp/easywechat": "6.x-dev",
+        "qcloud/cos-sdk-v5": "^2.6",
+        "aliyuncs/oss-sdk-php": "dev-master",
+        "upyun/sdk": "^2.2",
+        "thefunpower/baidu_nlp": "dev-main",
+        "thefunpower/fapiao": "dev-main",
+        "zircote/swagger-php": "^5"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": false
+        }
     }
 }

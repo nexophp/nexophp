@@ -1,4 +1,9 @@
-<?php 
+<?php
+
+/**
+ * 域名
+ */
+$config['host'] = 'http://127.0.0.1:3000';
 /**
  * 数据库配置
  */
@@ -6,7 +11,7 @@ $config['db_host'] = '127.0.0.1';
 $config['db_user'] = 'root';
 $config['db_pwd']  = '111111';
 $config['db_name'] = 'nexo';
-$config['db_port'] = '3306'; 
+$config['db_port'] = '3306';
 
 /**
  * redis
@@ -28,5 +33,18 @@ $config['aes'] = [
 /**
  * 后台列表高度
  */
-$config['admin_table_height'] = 168;
- 
+$config['admin_table_height'] = 150;
+
+/**
+ * JWT
+ */
+$config['jwt_key'] = md5('nexo'); 
+/**
+ * JWT过期时间
+ */
+$config['jwt_exp_time'] = 86400*30;
+/**
+ * 图片处理 Gd Imagick
+ * https://image.intervention.io/v3
+ */
+$config['image_drive'] = 'Gd';
