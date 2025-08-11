@@ -5,8 +5,7 @@
     "keywords": [
         "php"
     ],
-    "license": "MIT",
-    "minimum-stability": "dev",
+    "license": "MIT", 
     "authors": [
         {
             "name": "sunkangchina",
@@ -14,7 +13,7 @@
         }
     ],
     "require": { 
-        "nexophp/boot": "dev-main",
+        "nexophp/boot": "1.x",
         "tencentcloud/tencentcloud-sdk-php": "dev-master",
         "aws/aws-sdk-php": "^3.351",
         "alibabacloud/dysmsapi-20170525": "^3.1",
