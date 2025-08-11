@@ -53,6 +53,7 @@ CREATE TABLE `role` (
   `name` varchar(50) NOT NULL COMMENT '角色名称',
   `description` varchar(255) DEFAULT NULL COMMENT '角色描述',
   `permissions` text COMMENT '权限列表，JSON格式',
+  `sys_tag` varchar(20) DEFAULT 'admin' COMMENT '系统标签',
   `created_at` int(11) NOT NULL,
   `updated_at` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -81,8 +82,13 @@ CREATE TABLE `user` (
   `updated_at` int(11) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `email_verified_at` int(11) DEFAULT NULL,
+  `is_supper` tinyint(1) NOT NULL DEFAULT '0' COMMENT '',
   `phone` varchar(20) DEFAULT NULL,
   `phone_verified_at` int(11) DEFAULT NULL,
+  `sys_tag` varchar(20) DEFAULT 'admin' COMMENT '系统标签',
+  `avatar` varchar(255) DEFAULT NULL COMMENT '头像',
+  `nickname` varchar(20) DEFAULT NULL COMMENT '昵称', 
+
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 

@@ -11,6 +11,7 @@ class SiteController extends \core\AppController
     {
         parent::init();
         add_css('/assets/site/site.css');
+        
     }
     #[OA\Get(
         path: '/api/users',
@@ -19,5 +20,8 @@ class SiteController extends \core\AppController
             new OA\Response(response: 401, description: '未授权')
         ]
     )]
-    public function actionIndex() {}
+    public function actionIndex() {
+       
+
+    }
 }

@@ -3,22 +3,22 @@
 /**
  * 域名
  */
-$config['host'] = 'http://127.0.0.1:3000';
+$config['host'] = '{host}';
 /**
  * 数据库配置
  */
-$config['db_host'] = '127.0.0.1';
-$config['db_user'] = 'root';
-$config['db_pwd']  = '111111';
-$config['db_name'] = 'nexo';
-$config['db_port'] = '3306';
+$config['db_host'] = '{db_host}';
+$config['db_user'] = '{db_user}';
+$config['db_pwd']  = '{db_pwd}';
+$config['db_name'] = '{db_name}';
+$config['db_port'] = '{db_port}';
 
 /**
  * redis
  */
-$config['redis']['host'] = '127.0.0.1';
-$config['redis']['port'] = '6379';
-$config['redis']['auth'] = '';
+$config['redis']['host'] = '{redis_host}';
+$config['redis']['port'] = '{redis_port}';
+$config['redis']['auth'] = '{redis_auth}';
 
 /**
  * AES 
@@ -26,9 +26,9 @@ $config['redis']['auth'] = '';
  */
 $config['aes'] = [
     //32位
-    'key' => 'b720c8ea32c763e7b49f2313323e2e774a0f9dc94a366d0074fd10b4f55e2148',
+    'key' => '{aes_key}',
     //16位
-    'iv' => '86346e00b5cdceb3d42e2a1ea2d4d861',
+    'iv' => '{aes_iv}',
 ];
 /**
  * 后台列表高度
@@ -38,7 +38,7 @@ $config['admin_table_height'] = 150;
 /**
  * JWT
  */
-$config['jwt_key'] = md5('nexo'); 
+$config['jwt_key'] = '{jwt_key}'; 
 /**
  * JWT过期时间
  */
@@ -48,3 +48,30 @@ $config['jwt_exp_time'] = 86400*30;
  * https://image.intervention.io/v3
  */
 $config['image_drive'] = 'Gd';
+
+/**
+ * 每页显示条数
+ */
+$config['per_page'] = 20;
+
+/**
+ * 缓存
+ */
+$config['cache_pre'] = 'www';
+/**
+ * 缓存驱动 file redis
+ */
+$config['cache_drive'] = 'redis';
+/**
+ * CDN图片地址
+ * 如 https://cdn.yourname.com
+ */
+$config['cdn'] = [ 
+    
+]; 
+/**
+ * CDN CSS JS 
+ */
+$config['cdn_css'] = [
+     
+];

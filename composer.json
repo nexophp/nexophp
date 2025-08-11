@@ -27,7 +27,11 @@
         "upyun/sdk": "^2.2",
         "thefunpower/baidu_nlp": "dev-main",
         "thefunpower/fapiao": "dev-main",
-        "zircote/swagger-php": "^5"
+        "zircote/swagger-php": "^5",
+        "thefunpower/captcha": "dev-main",
+        "james-heinrich/getid3": "2.0.x-dev",
+        "mpdf/mpdf": "^8",
+        "iio/libmergepdf": "^3"
     },
     "config": {
         "allow-plugins": {

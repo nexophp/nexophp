@@ -8,3 +8,4 @@
 /public/nginx.htaccess
 /docs/guide/docs/.vitepress/cache
 /public/openapi.json
+/.htaccess
