@@ -1,6 +1,5 @@
-if (typeof window.wangEditor !== 'undefined') {
-    const E = window.wangEditor;
-}
+const E = window.wangEditor || {};
+
 
 
 function ajax(url, data, call) {
