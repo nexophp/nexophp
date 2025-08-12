@@ -1,0 +1,153 @@
+#!/usr/bin/env php
+<?php
+define('DEBUG', true);
+define('ISCLI', true);
+/**
+ * 加载配置
+ */
+include __DIR__ . '/config.ini.php';
+/**
+ * 启动项目
+ */
+include __DIR__ . '/vendor/nexophp/boot/boot.php';
+
+/**
+ * 获取所有可用的命令
+ */
+function getAllCommands()
+{
+    $commands = [];
+    $all_modules = get_all_modules();
+    foreach ($all_modules as $module) {
+        $module = get_dir($module);
+        $module_path =  $module . '/cmd';
+        $module_name = basename($module);
+        if (is_dir($module_path)) {
+            $cmd_files = glob($module_path . '/*.php');
+            foreach ($cmd_files as $cmd_file) {
+                $file_name = basename($cmd_file, '.php');
+                $file_content = file_get_contents($cmd_file);
+                $cmd_class = 'modules\\' . $module_name . '\\cmd\\' . $file_name;
+                if (!class_exists($cmd_class)) {
+                    //红色的错误提示
+                    echo "\033[31m";
+                    echo '类不存在:' . $cmd_class . "\n";
+                    // 重置颜色
+                    echo "\033[0m";
+                    continue;
+                }
+                $comment = '';
+                // 使用正则表达式提取类注释
+                if (preg_match('/\/\*\*([\s\S]*?)\*\/\s*class/i', $file_content, $matches)) {
+                    $comment_block = $matches[1];
+                    // 清理注释格式
+                    $lines = explode("\n", $comment_block);
+                    foreach ($lines as $line) {
+                        $line = trim($line);
+                        $line = preg_replace('/^\*\s*/', '', $line);
+                        if (!empty($line) && $line !== '*') {
+                            $comment = $line;
+                            break;
+                        }
+                    }
+                }
+                $commands[$module_name . '/' . strtolower($file_name)] = [
+                    'module' => $module,
+                    'class' => $cmd_class,
+                    'comment' => $comment ?: '无描述'
+                ];
+            }
+        }
+    }
+    return $commands;
+}
+
+/**
+ * 显示所有可用命令
+ */
+function showAllCommands()
+{
+    $commands = getAllCommands();
+    echo "可用的命令行工具:\n";
+    echo str_repeat('-', 50) . "\n";
+
+    foreach ($commands as $cmd_name => $cmd_info) {
+        printf("%-20s %s\n", $cmd_name, $cmd_info['comment']);
+    }
+    echo str_repeat('-', 50) . "\n";
+
+    echo "\n使用方法: php cli.php <模块名>/<命令名> [参数...]\n";
+    echo "示例: php cli.php minify/clean\n";
+}
+
+/**
+ * 执行指定命令
+ */
+function executeCommand($command_name, $args = [])
+{
+    $commands = getAllCommands();
+
+    if (!isset($commands[$command_name])) {
+        // 红色的错误提示
+        echo "\033[31m";
+        echo "错误: 命令 '{$command_name}' 不存在\n";
+        // 重置颜色
+        echo "\033[0m";
+        echo "使用 'php cli.php' 查看所有可用命令\n";
+        return;
+    }
+
+    $cmd_info = $commands[$command_name];
+
+    if (!class_exists($cmd_info['class'])) {
+        echo "错误: 类 '{$cmd_info['class']}' 不存在\n";
+        return;
+    }
+
+    try {
+        $cmd = new $cmd_info['class']();
+        if (method_exists($cmd, 'run')) {
+            // 将参数传递给run方法
+            call_user_func_array([$cmd, 'run'], $args);
+        } else {
+            // 红色的错误提示
+            echo "\033[31m";
+            echo "错误: 类 '{$cmd_info['class']}' 没有run方法\n";
+            // 重置颜色
+            echo "\033[0m";
+        }
+    } catch (Exception $e) {
+        // 红色的错误提示
+        echo "\033[31m";
+        echo "执行命令时发生错误: " . $e->getMessage() . "\n";
+        // 重置颜色
+        echo "\033[0m";
+    }
+}
+
+// 主程序逻辑
+$args = array_slice($argv, 1); // 移除脚本名称
+
+if (empty($args)) {
+    // 没有参数时显示所有命令
+    showAllCommands();
+} else {
+    // 执行指定命令
+    $command_name = $args[0];
+    $command_args = array_slice($args, 1);
+    executeCommand($command_name, $command_args);
+}
+
+function cli_success($str){
+    echo "\033[32m";
+    echo $str . "\n";
+    echo "\033[0m";
+    return true;
+}
+
+function cli_error($str){
+    echo "\033[31m";
+    echo $str . "\n";
+    echo "\033[0m";
+    return false;
+} 
