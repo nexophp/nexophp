@@ -471,3 +471,7 @@ label.required::after {
 .el-image-viewer__btn .el-icon-circle-close{
     color: #FFF;
 }
+
+.bg-purple { background-color: #6f42c1 !important; }
+.bg-orange { background-color: #fd7e14 !important; }
+.bg-teal { background-color: #20c997 !important; }
