@@ -5,7 +5,8 @@
     "keywords": [
         "php"
     ],
-    "license": "MIT", 
+    "license": "MIT",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "sunkangchina",
@@ -13,7 +14,7 @@
         }
     ],
     "require": { 
-        "nexophp/boot": "1.x",
+        "nexophp/boot": "dev-main",
         "tencentcloud/tencentcloud-sdk-php": "dev-master",
         "aws/aws-sdk-php": "^3.351",
         "alibabacloud/dysmsapi-20170525": "^3.1",
@@ -30,7 +31,11 @@
         "thefunpower/captcha": "dev-main",
         "james-heinrich/getid3": "2.0.x-dev",
         "mpdf/mpdf": "^8",
-        "iio/libmergepdf": "^3"
+        "iio/libmergepdf": "^3",
+        "matthiasmullie/minify": "^1",
+        "thefunpower/calendar": "^2",
+        "fukuball/jieba-php": "^0.42",
+        "elasticsearch/elasticsearch": "^9.0"
     },
     "config": {
         "allow-plugins": {

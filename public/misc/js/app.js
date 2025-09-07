@@ -20,8 +20,8 @@ function ajax(url, data, call) {
 Vue.prototype.$ELEMENT = { size: 'medium' };
 Vue.mixin({
     methods: {
-        
-         
+
+
     }
 });
 
@@ -72,6 +72,27 @@ function down_file(url, fileName) {
     x.send()
 }
 
-$(function(){
+$(function () {
     $('.select2').select2();
 });
+/**
+ * 是否是图片
+ * @param {string} url 
+ */
+function isImageFile(url) {
+    const ext = get_ext(url);
+    const imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'];
+    return imageExtensions.includes(ext);
+}
+/**
+ * formatFileSize
+ * @param {number} size - 文件大小（字节）
+ * @returns {string} 格式化后的文件大小
+ */
+function formatFileSize(size) {
+    if (size === 0) return '0 Bytes';
+    const k = 1024;
+    const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+    const i = Math.floor(Math.log(size) / Math.log(k));
+    return parseFloat((size / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+}
