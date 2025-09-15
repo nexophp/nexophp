@@ -9,3 +9,6 @@
 /docs/guide/docs/.vitepress/cache
 /public/openapi.json
 /.htaccess
+/runtime/cache
+/runtime/phplog.log
+/runtime/tmp
