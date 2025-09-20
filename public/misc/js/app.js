@@ -96,3 +96,7 @@ function formatFileSize(size) {
     const i = Math.floor(Math.log(size) / Math.log(k));
     return parseFloat((size / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
 }
+
+function isInIframe() {
+  return window.self !== window.top;
+}
