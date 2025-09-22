@@ -3587,12 +3587,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nexophp/boot.git",
-                "reference": "5c80296fa1424262290f2e9676c6c8c89eefa17c"
+                "reference": "4602df8a17fea083486992b7b27834c291400cc8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nexophp/boot/zipball/5c80296fa1424262290f2e9676c6c8c89eefa17c",
-                "reference": "5c80296fa1424262290f2e9676c6c8c89eefa17c",
+                "url": "https://api.github.com/repos/nexophp/boot/zipball/4602df8a17fea083486992b7b27834c291400cc8",
+                "reference": "4602df8a17fea083486992b7b27834c291400cc8",
                 "shasum": ""
             },
             "require": {
@@ -3644,7 +3644,7 @@
                 "issues": "https://github.com/nexophp/boot/issues",
                 "source": "https://github.com/nexophp/boot/tree/main"
             },
-            "time": "2025-09-19T09:30:09+00:00"
+            "time": "2025-09-22T06:24:47+00:00"
         },
         {
             "name": "nexophp/db",
