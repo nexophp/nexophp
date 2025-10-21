@@ -1,0 +1,148 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #f4f4f9;
+    transition: margin-left 0.3s ease;
+}
+
+#app{
+    margin:0;
+    padding:0;
+}
+
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #1a1f2e;
+    color: #e0e0e0;
+    overflow-y: auto; 
+    transition: transform 0.3s ease;
+}
+
+.sidebar.collapsed {
+    transform: translateX(-260px);
+}
+
+.content {
+    margin-left: 260px;
+    flex: 1; 
+    height: calc(100vh - 61px); 
+    transition: margin-left 0.3s ease;
+}
+
+.content.collapsed {
+    margin-left: 0;
+}
+
+.navbar {
+    position: fixed;
+    width: calc(100% - 260px);
+    top: 0;
+    left: 260px;
+    z-index: 1030;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease, width 0.3s ease; 
+}
+
+.navbar.collapsed {
+    left: 0;
+    width: 100%;
+}
+
+.iframe-container {
+    height: calc(100vh - 61px); 
+    margin-top: 55px;
+    background-color: #FFF; 
+}
+
+.iframe-container #contentFrame {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.sidebar .nav-link {
+    color: #e0e0e0;
+    padding: 10px 20px;
+    border-radius: 6px;
+    margin: 0 10px;
+    transition: background-color 0.2s;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #2a3147;
+}
+
+.sidebar .nav-link.active {
+    background-color: #0066ff;
+    color: #ffffff;
+}
+
+.sidebar .nav-link i {
+    margin-right: 10px;
+}
+
+.sub-menu {
+    padding-left: 30px;
+    display: none;
+}
+
+.sub-menu.show {
+    display: block;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #1a1f2e;
+    height: 39px;
+}
+
+.form-select {
+    border-radius: 6px;
+    background-color: #f8f9fa;
+}
+
+.dropdown-menu {
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-item:hover {
+    background-color: #f0f2f5;
+}
+
+.modal-content {
+    border-radius: 8px;
+}
+
+.btn-secondary {
+    border-radius: 6px;
+}
+
+.toggle-sidebar-btn {
+    cursor: pointer;
+}
+
+.sidebar-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    padding: 8px 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+.sidebar-title a{
+    color: #ffffff;
+}
+
+
+
+

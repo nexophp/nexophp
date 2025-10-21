@@ -612,3 +612,11 @@ label.required::after {
     }
 }
 
+
+.editor-container {
+    height: 180px !important;
+}
+
+.el-table .table th {
+     border-bottom: 0px !important;
+}

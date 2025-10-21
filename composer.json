@@ -35,8 +35,7 @@
         "matthiasmullie/minify": "^1",
         "thefunpower/calendar": "^2",
         "fukuball/jieba-php": "^0.42",
-        "elasticsearch/elasticsearch": "^9.0",
-        "openai-php/client": "^0.16"
+        "elasticsearch/elasticsearch": "^9.0"
     },
     "config": {
         "allow-plugins": {
